@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 py-10">
+    <div class="flex flex-col md:flex-row gap-10">
+
+        <!-- Register Form -->
+        <form method="post" class="bg-gray-900 p-10 rounded-3xl shadow-2xl w-96 flex flex-col gap-6">
+            {% csrf_token %}
+            
+            <h2 class="text-3xl font-bold text-white text-center mb-6">Register</h2>
+
+            <div class="flex flex-col gap-3">
+                <label for="school_name" class="text-gray-400 font-medium">School Name</label>
+                <input type="text" name="school_name" id="school_name" placeholder="Enter school name"
+                       class="p-3 rounded-xl text-gray-900 bg-gray-100 placeholder-gray-400 shadow-inner focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-1 transition-all duration-300">
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <label for="address" class="text-gray-400 font-medium">Address</label>
+                <input type="text" name="address" id="address" placeholder="Enter school address"
+                       class="p-3 rounded-xl text-gray-900 bg-gray-100 placeholder-gray-400 shadow-inner focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-1 transition-all duration-300">
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <label for="contact" class="text-gray-400 font-medium">Contact</label>
+                <input type="number" name="contact" id="contact" placeholder="Enter contact number"
+                       class="p-3 rounded-xl text-gray-900 bg-gray-100 placeholder-gray-400 shadow-inner focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-1 transition-all duration-300">
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <label for="email" class="text-gray-400 font-medium">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter email"
+                       class="p-3 rounded-xl text-gray-900 bg-gray-100 placeholder-gray-400 shadow-inner focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-1 transition-all duration-300">
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <label for="admin_username" class="text-gray-400 font-medium">Admin Username</label>
+                <input type="text" name="admin_username" id="admin_username" placeholder="Enter admin username"
+                       class="p-3 rounded-xl text-gray-900 bg-gray-100 placeholder-gray-400 shadow-inner focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-1 transition-all duration-300">
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <label for="admin_pass" class="text-gray-400 font-medium">Admin Password</label>
+                <input type="password" name="admin_pass" id="admin_pass" placeholder="Enter admin password"
+                       class="p-3 rounded-xl text-gray-900 bg-gray-100 placeholder-gray-400 shadow-inner focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-1 transition-all duration-300">
+            </div>
+
+            <button type="submit" 
+                    class="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white py-3 rounded-xl font-semibold shadow-lg transition-all duration-300">
+                Register
+            </button>
+
+        </form>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'accounts/login/login.css' %}">
+
+{% block content%}
+  
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen flex items-center justify-center py-10">
+
+    <div class="flex flex-col md:flex-row gap-10">
+        <!-- Login Form -->
+        <form method="post" class="bg-gray-900 p-10 rounded-3xl shadow-2xl w-96 flex flex-col gap-6">
+            {% csrf_token %}
+            
+            <h2 class="text-3xl font-bold text-white text-center mb-6">Login</h2>
+
+            <div class="flex flex-col gap-3">
+                <label for="user_email" class="text-gray-400 font-medium">Email</label>
+                <input type="text" name="user_email" id="user_email"
+                       placeholder="Enter your email"
+                       class="p-3 rounded-xl text-gray-900 bg-gray-100 placeholder-gray-400 shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 transition-all duration-300">
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <label for="user_pass" class="text-gray-400 font-medium">Password</label>
+                <input type="password" name="user_password" id="user_pass"
+                       placeholder="Enter your password"
+                       class="p-3 rounded-xl text-gray-900 bg-gray-100 placeholder-gray-400 shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 transition-all duration-300">
+            </div>
+
+            <button type="submit" 
+                    class="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white py-3 rounded-xl font-semibold shadow-lg transition-all duration-300">
+                Login
+            </button>
+
+            <p class="text-gray-400 text-sm text-center mt-3">
+                Forgot your password? <a href="#" class="text-blue-500 hover:underline font-medium">Reset</a>
+            </p>
+        </form>
+
+    </div>
+
+</body>
+
+
+
+
+{% endblock content%}
